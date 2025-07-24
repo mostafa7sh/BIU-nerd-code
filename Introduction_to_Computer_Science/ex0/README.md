@@ -10,5 +10,5 @@ Hello, World!
 ## How to run it
 
 ```bash
-gcc main.c -o hello_world
-./hello_world
+gcc ex0.c -o ex0
+./ex0
