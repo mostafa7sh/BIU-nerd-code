@@ -15,5 +15,5 @@ A modified version of the `hello world` program that prints:
 ”hello \ / \ /orld %d\n”, x;
 
 ```bash
-gcc ex1.c -o ex1
-./ex1
+gcc ex_1.c -o ex_1
+./ex_1
