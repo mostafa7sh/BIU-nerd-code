@@ -52,10 +52,12 @@ int main() {
             printf("Invalid option!\n");
             break;
         }
-    } while (option != 7);
+    } while (option != EXIT_CASE);
     return 0;
 }
-
+/************************************************************************
+ * The Function operation: print main menu *
+ *************************************************************************/
 void printMenu() {
     printf("Choose an option:\n"
            "1. octal to hex\n"
@@ -66,7 +68,9 @@ void printMenu() {
            "6. Zig-Zag bits\n"
            "7. exit\n");
 }
-
+/************************************************************************
+ * The Function operation: converts octal number to decimal *
+ *************************************************************************/
 void octalToHex() {
     int octal, tempOctal, isValid = 1;
     printf("Please enter number in octal base: ");
@@ -131,7 +135,9 @@ void octalToHex() {
     }
     printf("\n");
 }
-
+/************************************************************************
+ * The Function operation: addion opperation of two binary numbers *
+ *************************************************************************/
 void binaryAddition() {
     unsigned long long binary1, binary2;
     double binaryResult = 0;
@@ -187,7 +193,7 @@ void binaryAddition() {
             limit--;
         }
 
-        // print zeros padding for shorter number AFTER the sum, like original code
+        // print zeros padding for shorter number AFTER the sum
         if (counterChecker1 > counterChecker2) {
             while (counterChecker1 > counterChecker2) {
                 printf("0");
@@ -215,7 +221,9 @@ void binaryAddition() {
     Cout = 0;
     binaryResult = 0;
 }
-
+/************************************************************************
+ * The Function operation: prints "HI" as big as you want :D *
+ *************************************************************************/
 void printHI() {
     int size, loopout, loopin;
     printf("Please enter size: ");
@@ -371,7 +379,9 @@ void printHI() {
         printf("#\n");
     }
 }
-
+/************************************************************************
+ * The Function operation: count 1's in binary number *
+ *************************************************************************/
 void countBits() {
     int binaryInput, temp, onesCount = 0;
     int isValid = 1;
@@ -403,7 +413,9 @@ void countBits() {
         printf("%d\n", onesCount);
     }
 }
-
+/************************************************************************
+ * The Function operation: converts decimal number to binary *
+ *************************************************************************/
 void decimalToBinary() {
     int decimalInput, binary = 0, bitCount = 0;
 
@@ -427,7 +439,9 @@ void decimalToBinary() {
 
     printf("%d => %d\n", originalDecimal, binary);
 }
-
+/************************************************************************
+ * The Function operation: check if the decimal number is "zig zag" in binary *
+ *************************************************************************/
 void zigZag() {
     int decimal, tempDecimal, binaryReversed = 0, bitCount = 0;
     int countPow = 0;
@@ -442,7 +456,6 @@ void zigZag() {
     }
 
     tempDecimal = decimal;
-
     // count how many times divisible by 2 when last digit is even
     if (decimal != 0) {
         while ((tempDecimal % 10) % 2 == 0) {
@@ -469,7 +482,6 @@ void zigZag() {
 
     // multiply by 10^countPow
     binary *= (int)pow(10, countPow);
-
     // if binary/10 == 0, print true
     if (binary / 10 == 0) {
         printf("true\n");

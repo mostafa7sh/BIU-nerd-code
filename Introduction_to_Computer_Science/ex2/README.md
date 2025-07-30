@@ -2,7 +2,7 @@
 
 ## Overview
 
-This homework includes a C program (`homework.c`) with several tasks:
+This homework includes a C program (`ex_2.c`) with several tasks:
 
 - Convert octal numbers to hexadecimal
 - Add two binary numbers
