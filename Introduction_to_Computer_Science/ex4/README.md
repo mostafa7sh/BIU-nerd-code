@@ -18,5 +18,5 @@ This program implements a 3D Tic Tac Toe game in C using a 4×4×4 cube. Two pla
 ```bash
  gcc ex_4.c -lm -std=c99 -DNDEBUG -o ex_4
  ./ex_4
-
+exit
 example inputs can be found in the pdf file
