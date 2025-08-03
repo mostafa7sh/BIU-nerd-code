@@ -8,30 +8,32 @@ import java.util.Map;
 public class Div extends BinaryExpression {
     /**
      * div constructor.
-     * @param leftExpression the numerator.
+     * 
+     * @param leftExpression  the numerator.
      * @param rightExpression the denominator.
      */
     public Div(Expression leftExpression, Expression rightExpression) {
         super(leftExpression, rightExpression, "/");
     }
+
     @Override
     public double evaluate(Map<String, Double> assignment) throws Exception {
-        double leftNumber = super.leftExpression.evaluate(assignment);
-        double rightNumber = super.rightExpression.evaluate(assignment);
-        if (rightNumber == 0) {
+        double left = leftExpression.evaluate(assignment);
+        double right = rightExpression.evaluate(assignment);
+        if (right == 0) {
             throw new RuntimeException("you cant divide a number with zero");
         }
-        return leftNumber / rightNumber;
+        return left / right;
     }
 
     @Override
     public double evaluate() throws Exception {
-        double leftNumber = super.leftExpression.evaluate();
-        double rightNumber = super.rightExpression.evaluate();
-        if (rightNumber == 0) {
+        double left = leftExpression.evaluate();
+        double right = rightExpression.evaluate();
+        if (right == 0) {
             throw new RuntimeException("you cant divide a number with zero");
         }
-        return leftNumber / rightNumber;
+        return left / right;
     }
 
     @Override
@@ -41,72 +43,54 @@ public class Div extends BinaryExpression {
 
     @Override
     public Expression assign(String var, Expression expression) {
-        return new Div(super.leftExpression.assign(var, expression), super.rightExpression.assign(var, expression));
+        return new Div(leftExpression.assign(var, expression),
+                rightExpression.assign(var, expression));
     }
 
     @Override
     public Expression differentiate(String var) {
-        // f`
-        Expression leftDifferentiate = super.leftExpression.differentiate(var);
-        // g`
-        Expression rightDifferentiate = super.rightExpression.differentiate(var);
-        // f` * g
-        Expression firstPart = new Mult(leftDifferentiate, super.rightExpression);
-        // g` * f
-        Expression secondPart = new Mult(super.leftExpression, rightDifferentiate);
-        // (f` * g) - (g` - f)
-        Expression numerator = new Minus(firstPart, secondPart);
-        // g^2
-        Expression denominator = new Pow(super.rightExpression, new Num(2));
-        // ((f` * g) - (g` - f)) / g^2
+        Expression f = leftExpression;
+        Expression g = rightExpression;
+        Expression fPrime = f.differentiate(var);
+        Expression gPrime = g.differentiate(var);
+        Expression numerator = new Minus(new Mult(fPrime, g), new Mult(f, gPrime));
+        Expression denominator = new Pow(g, new Num(2));
         return new Div(numerator, denominator);
     }
 
     @Override
     public Expression simplify() {
-        Expression leftExpression = super.leftExpression.simplify();
-        Expression rightExpression = super.rightExpression.simplify();
-        // checking the two expression are numbers.
-        if (leftExpression instanceof Num && rightExpression instanceof Num) {
-            try {
-                if (rightExpression.evaluate() == 0) {
-                    throw new RuntimeException("you cant divide a number with zero");
-                }
-                double numerator = leftExpression.evaluate();
-                double denominator = rightExpression.evaluate();
-                return new Num(numerator / denominator);
-            } catch (Exception exception) {
-                return new Div(leftExpression, rightExpression);
-            }
-            // checking if the denominator was a number.
-        } else if (rightExpression instanceof Num) {
-            try {
-                if (rightExpression.evaluate() == 1) {
-                    return leftExpression;
-                } else if (rightExpression.evaluate() == 0) {
-                    throw new RuntimeException("you cant divide a number with zero");
-                }
-            } catch (Exception exception) {
-                return new Div(leftExpression, rightExpression);
-            }
-            // checking if the numerator was a nunmber.
-        } else if (leftExpression instanceof Num) {
-            try {
-                if (leftExpression.evaluate() == 0) {
-                    return new Num(0);
-                }
-            } catch (Exception exception) {
-                return new Div(leftExpression, rightExpression);
-            }
-        }
+        Expression left = leftExpression.simplify();
+        Expression right = rightExpression.simplify();
+
         try {
-            Expression yo = new Div(leftExpression, rightExpression);
-            if (yo.equals()) {
+            // both are numbers
+            if (left instanceof Num && right instanceof Num) {
+                double num = left.evaluate();
+                double den = right.evaluate();
+                if (den == 0) {
+                    throw new RuntimeException("Cannot divide by zero");
+                }
+                return new Num(num / den);
+            }
+
+            // x / 1 → x
+            if (right instanceof Num && right.evaluate() == 1) {
+                return left;
+            }
+
+            // 0 / x → 0 (x ≠ 0)
+            if (left instanceof Num && left.evaluate() == 0) {
+                return new Num(0);
+            }
+
+            // x / x → 1 (only if equal expressions)
+            if (left.equals(right)) {
                 return new Num(1);
             }
-        } catch (Exception exception) {
-            return new Div(leftExpression, rightExpression);
-        }
-        return new Div(leftExpression, rightExpression);
+
+        } catch (Exception e) {}
+
+        return new Div(left, right);
     }
 }

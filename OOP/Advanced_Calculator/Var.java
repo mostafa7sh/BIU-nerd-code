@@ -2,8 +2,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class Var implements Expression{
+public class Var implements Expression {
     private String variable;
+
     public Var(String variable) {
         this.variable = variable;
     }

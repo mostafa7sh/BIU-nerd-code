@@ -8,6 +8,7 @@ import java.util.Map;
 public class Cos extends UnaryExpression {
     /**
      * cos constructor.
+     * 
      * @param expression the expression inside the cos.
      */
     public Cos(Expression expression) {
@@ -16,12 +17,12 @@ public class Cos extends UnaryExpression {
 
     @Override
     public double evaluate(Map<String, Double> assignment) throws Exception {
-        return Math.cos(super.expression.evaluate(assignment));
+        return Math.cos(expression.evaluate(assignment));
     }
 
     @Override
     public double evaluate() throws Exception {
-        return Math.cos(super.expression.evaluate());
+        return Math.cos(expression.evaluate());
     }
 
     @Override
@@ -31,26 +32,23 @@ public class Cos extends UnaryExpression {
 
     @Override
     public Expression assign(String var, Expression expression) {
-        return new Cos(super.expression.assign(var, expression));
+        return new Cos(expression.assign(var, expression));
     }
 
     @Override
     public Expression differentiate(String var) {
-        Expression internalDerivative = super.expression.differentiate(var);
-        Expression toSin = new Sin(super.expression);
-        Expression toMinus = new Neg(toSin);
-        return new Mult(toMinus, internalDerivative);
+        // d/dx[cos(f(x))] = -sin(f(x)) * f'(x)
+        Expression fPrime = expression.differentiate(var);
+        return new Mult(new Neg(new Sin(expression)), fPrime);
     }
 
     @Override
     public Expression simplify() {
-        Expression single = super.expression.simplify();
+        Expression single = expression.simplify();
         if (single instanceof Num) {
             try {
                 return new Num(Math.cos(Math.toRadians(single.evaluate())));
-            } catch (Exception exception) {
-                return new Cos(single);
-            }
+            } catch (Exception exception) {}
         }
         return new Cos(single);
     }

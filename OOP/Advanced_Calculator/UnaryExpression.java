@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class UnaryExpression extends BaseExpression{
+public abstract class UnaryExpression extends BaseExpression {
     protected Expression expression;
 
     public UnaryExpression(Expression expression, String operator) {

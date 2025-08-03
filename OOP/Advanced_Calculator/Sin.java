@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Map;
 
-public class Sin extends UnaryExpression{
+public class Sin extends UnaryExpression {
 
     public Sin(Expression expression) {
         super(expression, "sin");
@@ -9,12 +9,12 @@ public class Sin extends UnaryExpression{
 
     @Override
     public double evaluate(Map<String, Double> assignment) throws Exception {
-        return Math.sin(super.expression.evaluate(assignment));
+        return Math.sin(expression.evaluate(assignment));
     }
 
     @Override
     public double evaluate() throws Exception {
-        return Math.sin(super.expression.evaluate());
+        return Math.sin(expression.evaluate());
     }
 
     @Override
@@ -24,25 +24,22 @@ public class Sin extends UnaryExpression{
 
     @Override
     public Expression assign(String var, Expression expression) {
-        return new Sin(super.expression.assign(var, expression));
+        return new Sin(expression.assign(var, expression));
     }
 
     @Override
     public Expression differentiate(String var) {
-        Expression internalDerivative = super.expression.differentiate(var);
-        Expression toCos = new Cos(super.expression);
-        return new Mult(toCos, internalDerivative);
+        Expression innerDerivative = expression.differentiate(var);
+        return new Mult(new Cos(expression), innerDerivative);
     }
 
     @Override
     public Expression simplify() {
-        Expression single = super.expression.simplify();
+        Expression single = expression.simplify();
         if (single instanceof Num) {
             try {
                 return new Num(Math.sin(Math.toRadians(single.evaluate())));
-            } catch (Exception exception) {
-                return new Sin(single);
-            }
+            } catch (Exception exception) {}
         }
         return new Sin(single);
     }

@@ -8,7 +8,8 @@ import java.util.Map;
 public class Log extends BinaryExpression {
     /**
      * log constructor.
-     * @param leftExpression the base.
+     * 
+     * @param leftExpression  the base.
      * @param rightExpression the anti-logarithm.
      */
     public Log(Expression leftExpression, Expression rightExpression) {
@@ -17,22 +18,22 @@ public class Log extends BinaryExpression {
 
     @Override
     public double evaluate(Map<String, Double> assignment) throws Exception {
-        double base = super.leftExpression.evaluate(assignment);
-        double antiLogarithm = super.rightExpression.evaluate(assignment);
-        if (base <= 0 || base == 1 || antiLogarithm <= 0) {
+        double base = leftExpression.evaluate(assignment);
+        double arg = rightExpression.evaluate(assignment);
+        if (base <= 0 || base == 1 || arg <= 0) {
             throw new RuntimeException("undefined logarithm");
         }
-        return Math.log(antiLogarithm) / Math.log(base);
+        return Math.log(arg) / Math.log(base);
     }
 
     @Override
     public double evaluate() throws Exception {
-        double base = super.leftExpression.evaluate();
-        double antiLogarithm = super.rightExpression.evaluate();
-        if (base <= 0 || base == 1 || antiLogarithm <= 0) {
+        double base = leftExpression.evaluate();
+        double arg = rightExpression.evaluate();
+        if (base <= 0 || base == 1 || arg <= 0) {
             throw new RuntimeException("undefined logarithm");
         }
-        return Math.log(antiLogarithm) / Math.log(base);
+        return Math.log(arg) / Math.log(base);
     }
 
     @Override
@@ -42,77 +43,60 @@ public class Log extends BinaryExpression {
 
     @Override
     public Expression assign(String var, Expression expression) {
-        return new Log(super.leftExpression.assign(var, expression), super.rightExpression.assign(var, expression));
+        return new Log(leftExpression.assign(var, expression), rightExpression.assign(var, expression));
     }
 
     @Override
     public Expression differentiate(String var) {
-        Expression rightDifferentiate = super.rightExpression.differentiate(var);
-        Expression denominator = new Mult(rightExpression, new Log(new Num(Math.E),leftExpression));
-        return new Div(rightDifferentiate, denominator);
+        Expression u = rightExpression;
+        Expression du = u.differentiate(var);
+        Expression lnBase = new Log(new Num(Math.E), leftExpression);
+        return new Div(du, new Mult(u, lnBase));
     }
 
     @Override
     public Expression simplify() {
-        Expression base = super.leftExpression.simplify();
-        Expression antiLogarithm = super.rightExpression.simplify();
-        if (antiLogarithm instanceof Var) {
-            try {
-                if (antiLogarithm.toString().equals("e")) {
-                    antiLogarithm = new Num(Math.E);
-                }
-            } catch (Exception exception) {
-                antiLogarithm = super.rightExpression.simplify();
-            }
+        Expression base = leftExpression.simplify();
+        Expression arg = rightExpression.simplify();
+
+        // replace "e" if used as a string
+        if (base instanceof Var && base.toString().equals("e")) {
+            base = new Num(Math.E);
         }
-        if (base instanceof Var) {
-            try {
-                if (base.toString().equals("e")) {
-                    base = new Num(Math.E);
-                }
-            } catch (Exception exception) {
-                base = super.leftExpression.simplify();
-            }
+        if (arg instanceof Var && arg.toString().equals("e")) {
+            arg = new Num(Math.E);
         }
-        if (base instanceof Num && antiLogarithm instanceof Num) {
-            try {
-                double baseNumber = base.evaluate();
-                double antiLogarithmNumber = antiLogarithm.evaluate();
-                if (baseNumber <= 0 || baseNumber == 1 ||antiLogarithmNumber <= 0) {
+
+        try {
+            if (base instanceof Num && arg instanceof Num) {
+                double b = base.evaluate();
+                double a = arg.evaluate();
+                if (b <= 0 || b == 1 || a <= 0) {
                     throw new RuntimeException("undefined logarithm");
                 }
-                if (baseNumber == antiLogarithmNumber) {
+                if (Double.compare(b, a) == 0) {
                     return new Num(1);
                 }
-                return new Num(Math.log(antiLogarithmNumber) / Math.log(baseNumber));
-            } catch (Exception exception) {
-                return new Log(base, antiLogarithm);
+                return new Num(Math.log(a) / Math.log(b));
             }
+        } catch (Exception e) {}
+
+        if (base.equals(arg)) {
+            return new Num(1);
         }
-        Expression yo = new Log(base, antiLogarithm);
-        try {
-            if (yo.equals()) {
-                return new Num(1);
-            }
-        } catch (Exception exception) {
-            return new Log(base, antiLogarithm);
-        }
-        return new Log(base, antiLogarithm);
+
+        return new Log(base, arg);
     }
 
     /**
      * @return string of the log formula.
      */
     public String toString() {
-        if (super.leftExpression instanceof Num) {
-            try {
-                if (super.leftExpression.evaluate() == Math.E) {
-                    return "log(e, " + super.rightExpression + ")";
-                }
-            } catch (Exception exception) {
-                return "log(" + super.leftExpression + ", " + super.rightExpression + ")";
+        try {
+            if (leftExpression instanceof Num && leftExpression.evaluate() == Math.E) {
+                return "ln(" + rightExpression + ")";
             }
-        }
-        return "log(" + super.leftExpression + ", " + super.rightExpression + ")";
+        } catch (Exception e) {}
+        return "log(" + leftExpression + ", " + rightExpression + ")";
     }
 }

@@ -2,19 +2,16 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class Num implements Expression{
+public class Num implements Expression {
     private double number;
+
     public Num(double number) {
         this.number = number;
     }
 
     @Override
     public double evaluate(Map<String, Double> assignment) throws Exception {
-        try {
-            return this.number;
-        } catch (Exception exception) {
-            throw new RuntimeException(exception);
-        }
+        return this.number;
     }
 
     @Override

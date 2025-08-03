@@ -19,8 +19,9 @@ public abstract class BinaryExpression extends BaseExpression {
 
     /**
      * binary expression constructor.
-     * @param left the left expression.
-     * @param right the right expression.
+     * 
+     * @param left     the left expression.
+     * @param right    the right expression.
      * @param operator the operator between the two expression.
      */
     public BinaryExpression(Expression left, Expression right, String operator) {
@@ -28,6 +29,7 @@ public abstract class BinaryExpression extends BaseExpression {
         this.leftExpression = left;
         this.rightExpression = right;
     }
+
     @Override
     public List<String> getVariables() {
         List<String> leftVariables = this.leftExpression.getVariables();
@@ -78,9 +80,9 @@ public abstract class BinaryExpression extends BaseExpression {
         }
         try {
             if (this.checkWithAssign(allVariables, 1.0) &&
-                this.checkWithAssign(allVariables, 10.0) &&
-                this.checkWithAssign(allVariables, 7.0) &&
-                this.checkWithAssign(allVariables, 25.0)) {
+                    this.checkWithAssign(allVariables, 10.0) &&
+                    this.checkWithAssign(allVariables, 7.0) &&
+                    this.checkWithAssign(allVariables, 25.0)) {
                 return true;
             }
         } catch (Exception exception) {
@@ -90,13 +92,17 @@ public abstract class BinaryExpression extends BaseExpression {
     }
 
     /**
-     * a very useful function that helps me check if two sides of the expression are equal,
-     * I pass to all the variables random values, and check if too sides behave like each other,
+     * a very useful function that helps me check if two sides of the expression are
+     * equal,
+     * I pass to all the variables random values, and check if too sides behave like
+     * each other,
      * if we get the same value no matter what we assign, then they are equal,
      * otherwise return false.
+     * 
      * @param variables a list of all the variables in the expression.
-     * @param start the starting number to
-     * @return true if left and right expression behave like each other, false otherwise.
+     * @param start     the starting number to
+     * @return true if left and right expression behave like each other, false
+     *         otherwise.
      * @throws Exception throw error if something unwanted occurs.
      */
     public boolean checkWithAssign(List<String> variables, double start) throws Exception {

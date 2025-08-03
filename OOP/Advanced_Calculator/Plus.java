@@ -1,24 +1,24 @@
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 
-public class Plus extends BinaryExpression{
+/**
+ * Class Plus.
+ * Represents addition between two expressions.
+ */
+public class Plus extends BinaryExpression {
     public Plus(Expression leftExpression, Expression rightExpression) {
         super(leftExpression, rightExpression, "+");
     }
 
     @Override
     public double evaluate(Map<String, Double> assignment) throws Exception {
-        double leftNumber = super.leftExpression.evaluate(assignment);
-        double rightNumber = super.rightExpression.evaluate(assignment);
-        return leftNumber + rightNumber;
+        return leftExpression.evaluate(assignment) + rightExpression.evaluate(assignment);
     }
 
     @Override
     public double evaluate() throws Exception {
-        double leftNumber = super.leftExpression.evaluate();
-        double rightNumber = super.rightExpression.evaluate();
-        return leftNumber + rightNumber;    }
+        return leftExpression.evaluate() + rightExpression.evaluate();
+    }
 
     @Override
     public List<String> getVariables() {
@@ -27,42 +27,44 @@ public class Plus extends BinaryExpression{
 
     @Override
     public Expression assign(String var, Expression expression) {
-        return new Plus(super.leftExpression.assign(var, expression), super.rightExpression.assign(var, expression));
+        return new Plus(leftExpression.assign(var, expression), rightExpression.assign(var, expression));
     }
 
     @Override
     public Expression differentiate(String var) {
-        return new Plus(super.leftExpression.differentiate(var), super.rightExpression.differentiate(var));
+        return new Plus(leftExpression.differentiate(var), rightExpression.differentiate(var));
     }
 
     @Override
     public Expression simplify() {
-        Expression leftExpression = super.leftExpression.simplify();
-        Expression rightExpression = super.rightExpression.simplify();
-        if (leftExpression instanceof Num && rightExpression instanceof Num) {
-            try {
-                double newForm = rightExpression.evaluate() + leftExpression.evaluate();
-                return new Num(newForm);
-            } catch (Exception exception) {
-                return new Plus(leftExpression, rightExpression);
+        Expression left = leftExpression.simplify();
+        Expression right = rightExpression.simplify();
+
+        try {
+            // Num + Num → constant
+            if (left instanceof Num && right instanceof Num) {
+                double sum = left.evaluate() + right.evaluate();
+                return new Num(sum);
             }
-        } else if (leftExpression instanceof Num) {
-            try {
-                if (leftExpression.evaluate() == 0) {
-                    return rightExpression;
-                }
-            } catch (Exception exception) {
-                return new Plus(leftExpression, rightExpression);
+
+            // 0 + x → x
+            if (left instanceof Num && left.evaluate() == 0) {
+                return right;
             }
-        } else if (rightExpression instanceof Num) {
-            try {
-                if (rightExpression.evaluate() == 0) {
-                    return leftExpression;
-                }
-            } catch (Exception exception) {
-                return new Plus(leftExpression, rightExpression);
+
+            // x + 0 → x
+            if (right instanceof Num && right.evaluate() == 0) {
+                return left;
             }
+        } catch (Exception e) {
+
         }
-        return new Plus(leftExpression, rightExpression);
+
+        // x + x → 2 * x
+        if (left.equals(right)) {
+            return new Mult(new Num(2), left);
+        }
+
+        return new Plus(left, right);
     }
 }

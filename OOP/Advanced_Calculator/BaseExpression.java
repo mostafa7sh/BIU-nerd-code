@@ -13,11 +13,13 @@ public class BaseExpression implements Expression {
 
     /**
      * expression constructor.
+     * 
      * @param operator an operator.
      */
     public BaseExpression(String operator) {
         this.operator = operator;
     }
+
     @Override
     public double evaluate(Map<String, Double> assignment) throws Exception {
         return 0;

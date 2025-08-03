@@ -8,6 +8,7 @@ import java.util.Map;
 public class Neg extends UnaryExpression {
     /**
      * neg constructor.
+     * 
      * @param expression the expression.
      */
     public Neg(Expression expression) {
@@ -16,12 +17,12 @@ public class Neg extends UnaryExpression {
 
     @Override
     public double evaluate(Map<String, Double> assignment) throws Exception {
-        return -super.expression.evaluate(assignment);
+        return -expression.evaluate(assignment);
     }
 
     @Override
     public double evaluate() throws Exception {
-        return -super.expression.evaluate();
+        return -expression.evaluate();
     }
 
     @Override
@@ -36,27 +37,29 @@ public class Neg extends UnaryExpression {
 
     @Override
     public Expression differentiate(String var) {
-        return new Neg(super.expression.differentiate(var));
+        return new Neg(expression.differentiate(var));
     }
 
     @Override
     public Expression simplify() {
-        Expression single = super.expression.simplify();
-        if (single instanceof Num) {
-            try {
-                if (single.evaluate() == 0) {
-                    return new Num(0);
-                } else if (single.evaluate() < 0) {
-                    return new Num(-single.evaluate());
-                }
-            } catch (Exception exception) {
-                return new Neg(single);
+        Expression simplified = expression.simplify();
+
+        try {
+            if (simplified instanceof Num) {
+                double val = simplified.evaluate();
+                return new Num(-val);
             }
-        } else if (single instanceof Neg) {
-            return new Neg(single);
-        }
-        return new Neg(single);
+
+            // --x => x
+            if (simplified instanceof Neg) {
+                return ((Neg) simplified).expression;
+            }
+
+        } catch (Exception e) {}
+
+        return new Neg(simplified);
     }
+
     @Override
     public String toString() {
         return "(" + super.operator + super.expression + ")";

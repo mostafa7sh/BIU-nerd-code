@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.Map;
+
 /**
  * Class Mult.
  * represents multiple between two expressions.
@@ -7,7 +8,8 @@ import java.util.Map;
 public class Mult extends BinaryExpression {
     /**
      * mult constructor
-     * @param leftExpression the left side.
+     * 
+     * @param leftExpression  the left side.
      * @param rightExpression the right side.
      */
     public Mult(Expression leftExpression, Expression rightExpression) {
@@ -16,16 +18,13 @@ public class Mult extends BinaryExpression {
 
     @Override
     public double evaluate(Map<String, Double> assignment) throws Exception {
-        double leftNumber = super.leftExpression.evaluate(assignment);
-        double rightNumber = super.rightExpression.evaluate(assignment);
-        return leftNumber * rightNumber;
+        return leftExpression.evaluate(assignment) *
+                rightExpression.evaluate(assignment);
     }
 
     @Override
     public double evaluate() throws Exception {
-        double leftNumber = super.leftExpression.evaluate();
-        double rightNumber = super.rightExpression.evaluate();
-        return leftNumber * rightNumber;
+        return leftExpression.evaluate() * rightExpression.evaluate();
     }
 
     @Override
@@ -35,54 +34,47 @@ public class Mult extends BinaryExpression {
 
     @Override
     public Expression assign(String var, Expression expression) {
-        return new Mult(super.leftExpression.assign(var, expression), super.rightExpression.assign(var, expression));
+        return new Mult(leftExpression.assign(var, expression),
+                rightExpression.assign(var, expression));
     }
 
     @Override
     public Expression differentiate(String var) {
-        Expression leftDifferentiate = super.leftExpression.differentiate(var);
-        Expression rightDifferentiate = super.rightExpression.differentiate(var);
-        return new Plus(new Mult(leftDifferentiate, super.rightExpression),
-                new Mult(super.leftExpression, rightDifferentiate));
+        return new Plus(
+                new Mult(leftExpression.differentiate(var), rightExpression),
+                new Mult(leftExpression, rightExpression.differentiate(var)));
     }
 
     @Override
     public Expression simplify() {
-        Expression leftExpression = super.leftExpression.simplify();
-        Expression rightExpression = super.rightExpression.simplify();
-        // check if two sides are numbers.
-        if (leftExpression instanceof Num && rightExpression instanceof Num) {
-            try {
-                if (leftExpression.evaluate() == 0 || rightExpression.evaluate() == 0) {
-                    return new Num(0);
-                }
-                return new Num(leftExpression.evaluate() * rightExpression.evaluate());
-            } catch (Exception exception) {
-                return new Mult(leftExpression, rightExpression);
+        Expression left = leftExpression.simplify();
+        Expression right = rightExpression.simplify();
+
+        try {
+            // if both sides are numbers, return result
+            if (left instanceof Num && right instanceof Num) {
+                return new Num(left.evaluate() * right.evaluate());
             }
-            // check if left side was a number.
-        } else if (leftExpression instanceof Num) {
-            try {
-                if (leftExpression.evaluate() == 0) {
-                    return new Num(0);
-                } else if (leftExpression.evaluate() == 1) {
-                    return rightExpression;
-                }
-            } catch (Exception exception) {
-                return new Mult(leftExpression, rightExpression);
+
+            // if either side is 0, return 0
+            if ((left instanceof Num && left.evaluate() == 0)
+                    || (right instanceof Num && right.evaluate() == 0)) {
+                return new Num(0);
             }
-            // check right side if was a number.
-        } else if (rightExpression instanceof Num) {
-            try {
-                if (rightExpression.evaluate() == 0) {
-                    return new Num(0);
-                } else if (rightExpression.evaluate() == 1) {
-                    return leftExpression;
-                }
-            } catch (Exception exception) {
-                return new Mult(leftExpression, rightExpression);
+
+            // if left is 1, return right
+            if (left instanceof Num && left.evaluate() == 1) {
+                return right;
             }
+
+            // if right is 1, return left
+            if (right instanceof Num && right.evaluate() == 1) {
+                return left;
+            }
+
+        } catch (Exception e) {
         }
-        return new Mult(leftExpression, rightExpression);
+
+        return new Mult(left, right);
     }
 }

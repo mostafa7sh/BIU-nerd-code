@@ -8,6 +8,7 @@ import java.util.TreeMap;
 public class ExpressionsTest {
     /**
      * your test sir.
+     * 
      * @param args nothing for now.
      * @throws Exception throws an error, if occurs.
      */
@@ -15,7 +16,7 @@ public class ExpressionsTest {
         Expression twoX = new Mult(new Num(2), new Var("x"));
         Expression ePowX = new Pow(new Var("e"), new Var("x"));
         Expression sin4Y = new Sin(new Mult(new Num(4), new Var("y")));
-        Expression toSubmit = new Plus(twoX,new Plus(sin4Y, ePowX));
+        Expression toSubmit = new Plus(twoX, new Plus(sin4Y, ePowX));
         System.out.println(toSubmit);
         Map<String, Double> assignment = new TreeMap<String, Double>();
         assignment.put("x", 2.0);
