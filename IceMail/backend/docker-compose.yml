@@ -1,0 +1,53 @@
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - gmailnet
+
+  gmailserver:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    ports:
+      - "3000:3000"
+    container_name: gmailserver
+    depends_on:
+      - mongodb
+    networks:
+      - gmailnet
+    environment:
+      - CONNECTION_STRING=mongodb://mongodb:27017
+      - PORT=3000
+    volumes:
+      - ./uploads:/usr/src/app/uploads
+
+  gmailclient:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    container_name: gmailclient
+    depends_on:
+      - gmailserver
+    networks:
+      - gmailnet
+
+  bloomserver:
+    build:
+      context: .
+      dockerfile: Dockerfile.Bloom
+    container_name: bloomserver
+    networks:
+      - gmailnet
+
+volumes:
+  mongodb_data:
+
+networks:
+  gmailnet:

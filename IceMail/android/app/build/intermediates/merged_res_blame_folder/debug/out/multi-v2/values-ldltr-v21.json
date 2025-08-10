@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.gmailapp-mergeDebugResources-36:/values-ldltr-v21/values-ldltr-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sarso\\.gradle\\caches\\8.12\\transforms\\d4196608ebb38e42ae2e77bee68e5f07\\transformed\\appcompat-1.6.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
+                    }
+                }
+            ]
+        }
+    ]
+}

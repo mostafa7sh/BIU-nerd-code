@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.gmailapp-mergeDebugResources-36:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sarso\\.gradle\\caches\\8.12\\transforms\\d4196608ebb38e42ae2e77bee68e5f07\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    }
+                }
+            ]
+        }
+    ]
+}

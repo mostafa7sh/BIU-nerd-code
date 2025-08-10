@@ -1,0 +1,156 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.gmailapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="34" />
+9-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:4:5-67
+11-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:4:22-64
+12
+13    <permission
+13-->[androidx.core:core:1.13.0] C:\Users\sarso\.gradle\caches\8.12\transforms\a12324b63c897f43f7b1e8a76c47eb6a\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+14        android:name="com.example.gmailapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+14-->[androidx.core:core:1.13.0] C:\Users\sarso\.gradle\caches\8.12\transforms\a12324b63c897f43f7b1e8a76c47eb6a\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+15        android:protectionLevel="signature" />
+15-->[androidx.core:core:1.13.0] C:\Users\sarso\.gradle\caches\8.12\transforms\a12324b63c897f43f7b1e8a76c47eb6a\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+16
+17    <uses-permission android:name="com.example.gmailapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+17-->[androidx.core:core:1.13.0] C:\Users\sarso\.gradle\caches\8.12\transforms\a12324b63c897f43f7b1e8a76c47eb6a\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.13.0] C:\Users\sarso\.gradle\caches\8.12\transforms\a12324b63c897f43f7b1e8a76c47eb6a\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+18
+19    <application
+19-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:6:5-37:19
+20        android:allowBackup="true"
+20-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:7:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.13.0] C:\Users\sarso\.gradle\caches\8.12\transforms\a12324b63c897f43f7b1e8a76c47eb6a\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+22        android:debuggable="true"
+23        android:label="GmailApp"
+23-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:8:9-33
+24        android:networkSecurityConfig="@xml/network_security_config"
+24-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:11:9-69
+25        android:supportsRtl="true"
+25-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:9:9-35
+26        android:testOnly="true"
+27        android:theme="@style/Theme.Material3.DayNight.NoActionBar" >
+27-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:10:9-68
+28        <activity android:name="com.example.gmailapp.view.CreateLabelActivity" />
+28-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:15:9-62
+28-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:15:19-59
+29        <activity android:name="com.example.gmailapp.view.LabelActivity" />
+29-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:17:9-56
+29-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:17:19-53
+30        <activity android:name="com.example.gmailapp.view.ViewMailActivity" />
+30-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:19:9-59
+30-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:19:19-56
+31        <activity android:name="com.example.gmailapp.view.ComposeActivity" />
+31-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:21:9-58
+31-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:21:19-55
+32        <activity android:name="com.example.gmailapp.view.InboxActivity" />
+32-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:23:9-56
+32-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:23:19-53
+33        <activity
+33-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:25:9-32:20
+34            android:name="com.example.gmailapp.view.LoginActivity"
+34-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:26:13-47
+35            android:exported="true" >
+35-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:27:13-36
+36            <intent-filter>
+36-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:28:13-31:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:29:17-69
+37-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:29:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:30:17-77
+39-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:30:27-74
+40            </intent-filter>
+41        </activity>
+42        <activity android:name="com.example.gmailapp.view.RegisterActivity" />
+42-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:34:9-59
+42-->C:\Users\sarso\Downloads\EX5_Android_GmailStyle_WithAuth\EX5\app\src\main\AndroidManifest.xml:34:19-56
+43
+44        <provider
+44-->[androidx.emoji2:emoji2:1.2.0] C:\Users\sarso\.gradle\caches\8.12\transforms\fb4c6baf5b1d9c1e3d5fe0e77aacc737\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+45            android:name="androidx.startup.InitializationProvider"
+45-->[androidx.emoji2:emoji2:1.2.0] C:\Users\sarso\.gradle\caches\8.12\transforms\fb4c6baf5b1d9c1e3d5fe0e77aacc737\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+46            android:authorities="com.example.gmailapp.androidx-startup"
+46-->[androidx.emoji2:emoji2:1.2.0] C:\Users\sarso\.gradle\caches\8.12\transforms\fb4c6baf5b1d9c1e3d5fe0e77aacc737\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+47            android:exported="false" >
+47-->[androidx.emoji2:emoji2:1.2.0] C:\Users\sarso\.gradle\caches\8.12\transforms\fb4c6baf5b1d9c1e3d5fe0e77aacc737\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+48            <meta-data
+48-->[androidx.emoji2:emoji2:1.2.0] C:\Users\sarso\.gradle\caches\8.12\transforms\fb4c6baf5b1d9c1e3d5fe0e77aacc737\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+49                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+49-->[androidx.emoji2:emoji2:1.2.0] C:\Users\sarso\.gradle\caches\8.12\transforms\fb4c6baf5b1d9c1e3d5fe0e77aacc737\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+50                android:value="androidx.startup" />
+50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\sarso\.gradle\caches\8.12\transforms\fb4c6baf5b1d9c1e3d5fe0e77aacc737\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+51            <meta-data
+51-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\sarso\.gradle\caches\8.12\transforms\262c80f9fa647e8b838a09237fc64873\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+52                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+52-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\sarso\.gradle\caches\8.12\transforms\262c80f9fa647e8b838a09237fc64873\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+53                android:value="androidx.startup" />
+53-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\sarso\.gradle\caches\8.12\transforms\262c80f9fa647e8b838a09237fc64873\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+54            <meta-data
+54-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+55                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+55-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+56                android:value="androidx.startup" />
+56-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+57        </provider>
+58
+59        <service
+59-->[androidx.room:room-runtime:2.6.1] C:\Users\sarso\.gradle\caches\8.12\transforms\0b89017ad42e0922b47be88c6ea93a37\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+60            android:name="androidx.room.MultiInstanceInvalidationService"
+60-->[androidx.room:room-runtime:2.6.1] C:\Users\sarso\.gradle\caches\8.12\transforms\0b89017ad42e0922b47be88c6ea93a37\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+61            android:directBootAware="true"
+61-->[androidx.room:room-runtime:2.6.1] C:\Users\sarso\.gradle\caches\8.12\transforms\0b89017ad42e0922b47be88c6ea93a37\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+62            android:exported="false" />
+62-->[androidx.room:room-runtime:2.6.1] C:\Users\sarso\.gradle\caches\8.12\transforms\0b89017ad42e0922b47be88c6ea93a37\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+63
+64        <receiver
+64-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+65            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+65-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+66            android:directBootAware="false"
+66-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+67            android:enabled="true"
+67-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+68            android:exported="true"
+68-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+69            android:permission="android.permission.DUMP" >
+69-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+70            <intent-filter>
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+71                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+72            </intent-filter>
+73            <intent-filter>
+73-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+74                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+75            </intent-filter>
+76            <intent-filter>
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+77                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+78            </intent-filter>
+79            <intent-filter>
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+80                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sarso\.gradle\caches\8.12\transforms\17a8b7e5dc486023cfb545ca8e8df5b7\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+81            </intent-filter>
+82        </receiver>
+83    </application>
+84
+85</manifest>

@@ -1,0 +1,102 @@
+.inbox-container {
+  padding: 20px;
+}
+
+.inbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-mail-btn {
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  margin-bottom: 12px;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.create-mail-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.search-btn {
+  padding: 10px 15px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: var(--secondary-hover);
+}
+
+.select-all-container {
+  margin-bottom: 15px;
+}
+
+.select-all-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.read-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.icloud-btn {
+  padding: 8px 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.icloud-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.icloud-btn.secondary {
+  background-color: var(--secondary-color);
+}
+
+.icloud-btn.secondary:hover {
+  background-color: var(--secondary-hover);
+}
+
+.error-message {
+  color: #ff3b3b;
+  margin-bottom: 15px;
+}
+
+.empty-message {
+  color: var(--text-muted);
+  font-style: italic;
+}

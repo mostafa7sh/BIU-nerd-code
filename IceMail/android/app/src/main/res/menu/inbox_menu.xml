@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Search icon -->
+    <item
+        android:id="@+id/action_search"
+        android:title="Search"
+        android:icon="@drawable/ic_baseline_search_24"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+
+    <item
+        android:id="@+id/action_mark_important"
+        android:title="Mark as Important"
+        android:icon="@drawable/ic_baseline_star_24"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_show_important"
+        android:title="Show Important"
+        android:icon="@drawable/ic_baseline_label_important_24"
+        app:showAsAction="never" />
+
+    <!-- Logout option -->
+    <item
+        android:id="@+id/action_logout"
+        android:title="Logout"
+        android:icon="@android:drawable/ic_lock_power_off"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/nav_inbox"
+        android:icon="@drawable/ic_baseline_inbox_24"
+        android:title="Inbox" />
+
+    <item
+        android:id="@+id/nav_drafts"
+        android:icon="@drawable/ic_baseline_drafts_24"
+        android:title="Drafts" />
+
+
+
+
+</menu>

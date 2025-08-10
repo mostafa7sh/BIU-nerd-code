@@ -1,0 +1,198 @@
+[
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_draft.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_draft.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_dialog_edit_label.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\dialog_edit_label.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_item_label.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\item_label.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_delete_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_delete_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-pngs-34:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_activity_inbox.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\activity_inbox.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_drawer_header.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\drawer_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\menu_drawer_menu.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\menu\\drawer_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\menu_inbox_menu.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\menu\\inbox_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\menu_view_mail_menu.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\menu\\view_mail_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_label.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_label.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_drafts_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_drafts_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_label_off_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_label_off_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_activity_label_manager.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\activity_label_manager.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_activity_compose.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\activity_compose.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_menu_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_menu_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_activity_view_mail.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\activity_view_mail.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_mail_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_mail_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_logout_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_logout_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_star_filled.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_star_filled.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_label_important_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_label_important_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_search_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.gmailapp-merged_res-38:/menu_drawer_menu.xml.flat",
+        "source": "com.example.gmailapp-main-40:/menu/drawer_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_activity_label.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\activity_label.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_arrow_back_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_arrow_back_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_activity_create_label.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\activity_create_label.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_star_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_star_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_inbox_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_inbox_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_edit_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_edit_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_star_outline.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_star_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\layout_item_mail.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\layout\\item_mail.xml"
+    },
+    {
+        "merged": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-merged_res-38:\\drawable_ic_baseline_label_24.xml.flat",
+        "source": "C:\\Users\\sarso\\.gradle\\daemon\\8.12\\com.example.gmailapp-main-40:\\drawable\\ic_baseline_label_24.xml"
+    }
+]

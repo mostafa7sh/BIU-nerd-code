@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/activity_label.xml",
+        "source": "com.example.gmailapp-main-40:/layout/activity_label.xml"
+    },
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/activity_register.xml",
+        "source": "com.example.gmailapp-main-40:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/activity_login.xml",
+        "source": "com.example.gmailapp-main-40:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/activity_label_manager.xml",
+        "source": "com.example.gmailapp-main-40:/layout/activity_label_manager.xml"
+    },
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/activity_view_mail.xml",
+        "source": "com.example.gmailapp-main-40:/layout/activity_view_mail.xml"
+    },
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/activity_inbox.xml",
+        "source": "com.example.gmailapp-main-40:/layout/activity_inbox.xml"
+    },
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/activity_create_label.xml",
+        "source": "com.example.gmailapp-main-40:/layout/activity_create_label.xml"
+    },
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/item_label.xml",
+        "source": "com.example.gmailapp-main-40:/layout/item_label.xml"
+    },
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/item_mail.xml",
+        "source": "com.example.gmailapp-main-40:/layout/item_mail.xml"
+    },
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/drawer_header.xml",
+        "source": "com.example.gmailapp-main-40:/layout/drawer_header.xml"
+    },
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/dialog_edit_label.xml",
+        "source": "com.example.gmailapp-main-40:/layout/dialog_edit_label.xml"
+    },
+    {
+        "merged": "com.example.gmailapp-mergeDebugResources-37:/layout/activity_compose.xml",
+        "source": "com.example.gmailapp-main-40:/layout/activity_compose.xml"
+    }
+]

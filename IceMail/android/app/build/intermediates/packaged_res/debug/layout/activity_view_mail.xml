@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- FROM -->
+        <TextView
+            android:id="@+id/textFrom"
+            android:text="From: sender@example.com"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- TO -->
+        <TextView
+            android:id="@+id/textTo"
+            android:text="To: your@email.com"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- DATE -->
+        <TextView
+            android:id="@+id/textDate"
+            android:text="Jul 21, 2025"
+            android:textColor="#888888"
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="#DDDDDD" />
+
+        <!-- SUBJECT -->
+        <TextView
+            android:id="@+id/textSubject"
+            android:text="Your email subject here"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="#EEEEEE" />
+
+        <!-- CONTENT -->
+        <TextView
+            android:id="@+id/textContent"
+            android:text="This is the full content of the email..."
+            android:textSize="16sp"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

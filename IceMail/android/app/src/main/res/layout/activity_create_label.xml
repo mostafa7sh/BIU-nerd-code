@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <EditText
+        android:id="@+id/editLabelName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter label name"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnCreateLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Label"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

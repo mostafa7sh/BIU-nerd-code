@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="12dp"
+    app:strokeColor="@color/purple_500"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- Sender -->
+        <TextView
+            android:id="@+id/textViewSender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sender"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnImportant"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Important Star Button -->
+        <ImageButton
+            android:id="@+id/btnImportant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="Mark as important"
+            android:src="@drawable/ic_star_outline"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"/>
+
+        <!-- Subject -->
+        <TextView
+            android:id="@+id/textViewSubject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Subject"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@id/textViewSender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Body Preview -->
+        <TextView
+            android:id="@+id/textViewBody"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Preview text for the email body goes here..."
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@id/textViewSubject"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

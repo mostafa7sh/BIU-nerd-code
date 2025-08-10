@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/main_group">
+
+    <item android:id="@+id/nav_all"
+        android:icon="@drawable/ic_baseline_inbox_24"
+        android:title="All"/>
+
+    <item android:id="@+id/nav_important"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="Importants"/>
+    <item
+        android:id="@+id/nav_drafts"
+        android:icon="@drawable/ic_baseline_drafts_24"
+        android:title="Drafts"/>
+    <item
+        android:id="@+id/nav_labels"
+        android:icon="@drawable/ic_baseline_label_24"
+        android:title="Labels"/>
+
+    <item android:id="@+id/nav_logout"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:title="Logout"/>
+
+    </group>
+
+    <group android:id="@+id/label_group">
+    </group>
+
+
+</menu>
