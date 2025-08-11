@@ -1,3 +1,5 @@
+package Geometry;
+
 /**
  * Class Velocity.
  * represents the speed of the ball.
