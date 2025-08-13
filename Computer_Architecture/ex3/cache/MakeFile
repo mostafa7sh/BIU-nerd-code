@@ -1,0 +1,9 @@
+CC = gcc
+
+all: cache
+
+cache: main.c
+	$(CC) -o $@ $<
+
+clean:
+	rm -f cache

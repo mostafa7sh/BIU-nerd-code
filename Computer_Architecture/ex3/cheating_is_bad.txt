@@ -1,0 +1,81 @@
+ok this my journy with cutter (wish someone can teach me on that cool tool but nvm) and this is what I after disassemlying the "patchwork" file :
+
+int main(int argc, char **argv, char **envp);
+; var uint64_t var_ch @ stack - 0xc
+0x00001139      push    rbp
+0x0000113a      mov     rbp, rsp
+0x0000113d      sub     rsp, 0x10
+0x00001141      mov     dword [var_ch], 0
+0x00001148      lea     rax, [str.Trampolines_are_quite_fun___I_love_to_jump] ; 0x2008
+0x0000114f      mov     rdi, rax   ; const char *s
+0x00001152      call    puts       ; sym.imp.puts ; int puts(const char *s)
+0x00001157      lea     rax, [str.You_should_try_jumping_too__It_ll_sure_be_more_fun_than_reversing_the_flag_manually.] ; 0x2038
+0x0000115e      mov     rdi, rax   ; const char *s
+0x00001161      call    puts       ; sym.imp.puts ; int puts(const char *s)
+0x00001166      cmp     dword [var_ch], 0
+0x0000116a      je      0x1176
+0x0000116c      mov     eax, 0
+0x00001171      call    give_flag  ; sym.give_flag
+0x00001176      mov     eax, 0
+0x0000117b      leave
+0x0000117c      ret
+
+looks like this is my main function, and these three line call a function called "puts" with a string argument wich is "Trampolines_are_quite_fun___I_love_to_jump":
+
+0x00001148      lea     rax, [str.Trampolines_are_quite_fun___I_love_to_jump] ; 0x2008
+0x0000114f      mov     rdi, rax   ; const char *s
+0x00001152      call    puts       ; sym.imp.puts ; int puts(const char *s)
+
+same idea at the these 3 lines wich will come after:
+
+0x00001157      lea     rax, [str.You_should_try_jumping_too__It_ll_sure_be_more_fun_than_reversing_the_flag_manually.] ; 0x2038
+0x0000115e      mov     rdi, rax   ; const char *s
+0x00001161      call    puts       ; sym.imp.puts ; int puts(const char *s)
+
+hmmm, calling same function with the argument "You_should_try_jumping_too__It_ll_sure_be_more_fun_than_reversing_the_flag_manually.", like am I a joke to you!? (lol just kidding).
+after looking at the code for like 5 min, I recognized that they have a variable "var_ch" in stack and was assinged to 0, saw that in this line:
+
+0x00001141      mov     dword [var_ch], 0
+
+at the end of the code here, we can see he is checking if "var_ch" (idk but feels like a pointer to a string or smthin like that) is still 0, if yes! simply end the code. if no! , call the function give_flag:
+
+0x00001166      cmp     dword [var_ch], 0
+0x0000116a      je      0x1176
+0x0000116c      mov     eax, 0
+0x00001171      call    give_flag  ; sym.give_flag
+0x00001176      mov     eax, 0
+0x0000117b      leave
+0x0000117c      ret
+
+since we reached crossroads, whether "var-ch" == 0 or "var-ch" != 0, lets say that "var-ch" != 0 so we can see what "give_flag" function will do, simply if "var-ch" == 0 we end the program XD.
+after this place things go weird so I wet back and used gdb (i got used to use gdb since the 2nd assignment), this the assembly code that I got after disassemblying "patchwork":
+
+Dump of assembler code for function main:
+   0x0000555555555139 <+0>:     push   %rbp
+   0x000055555555513a <+1>:     mov    %rsp,%rbp
+=> 0x000055555555513d <+4>:     sub    $0x10,%rsp
+   0x0000555555555141 <+8>:     movl   $0x0,-0x4(%rbp)
+   0x0000555555555148 <+15>:    lea    0xeb9(%rip),%rax        # 0x555555556008
+   0x000055555555514f <+22>:    mov    %rax,%rdi
+   0x0000555555555152 <+25>:    call   0x555555555030 <puts@plt>
+   0x0000555555555157 <+30>:    lea    0xeda(%rip),%rax        # 0x555555556038
+   0x000055555555515e <+37>:    mov    %rax,%rdi
+   0x0000555555555161 <+40>:    call   0x555555555030 <puts@plt>
+   0x0000555555555166 <+45>:    cmpl   $0x0,-0x4(%rbp)
+   0x000055555555516a <+49>:    je     0x555555555176 <main+61>
+   0x000055555555516c <+51>:    mov    $0x0,%eax
+   0x0000555555555171 <+56>:    call   0x55555555517d <give_flag>
+   0x0000555555555176 <+61>:    mov    $0x0,%eax
+   0x000055555555517b <+66>:    leave
+   0x000055555555517c <+67>:    ret
+
+I saw this line (below) went like , why must I jumb there and end? just step over that instruction using "set $rip = 0x0000555555555171":
+
+   0x000055555555516a <+49>:    je     0x555555555176 <main+61>
+   0x000055555555516c <+51>:    mov    $0x0,%eax
+   0x0000555555555171 <+56>:    call   0x55555555517d <give_flag>
+
+and here come the surprise, I got this string "PCTF{JuMp_uP_4nd_g3t_d0Wn}" jump up and get down?.
+idk (idk = I dont know) what should I do further more but I think reached far enough lol, so simply I must just change this line "movl   $0x0,-0x4(%rbp)" with "movl   $0x1,-0x4(%rbp)" (or anything other than 0 and gg).
+siuuuuuuu
+*edit: I manipulated the file and it works (prints the secret flags too)!!!
